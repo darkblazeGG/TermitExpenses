@@ -1,0 +1,75 @@
+<!-- Index.html file -->
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Термит</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript">
+        window.addEventListener("load", () => {
+            window.localStorage.removeItem('orders')
+            window.localStorage.removeItem('polyester')
+            window.localStorage.removeItem('polyurethane')
+            window.localStorage.removeItem('insulator')
+
+            document.addEventListener('submit', event => {
+                event.preventDefault()
+                order()
+            })
+            // const addOrder = document.getElementById('addOrder')
+            // addOrder.addEventListener('click', order)
+
+            const addPolyester = document.getElementById('addPolyester')
+            addPolyester.addEventListener('click', polyester)
+
+            const addPolyurethane = document.getElementById('addPolyurethane')
+            addPolyurethane.addEventListener('click', polyurethane)
+
+            const addInsulator = document.getElementById('addInsulator')
+            addInsulator.addEventListener('click', insulator)
+
+            const expenses = document.getElementById('setExpenses')
+            expenses.addEventListener('click', setExpenses)
+
+        })
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Расчет затрат грунта и изолятора</h1>
+        <h1>Введите номера заказов по очереди</h1>
+
+        <div class="place">
+            <form name="order">
+                <input id="order" type="text" autocomplete="off" placeholder="Номер заказа">
+                <input id="addOrder" type="submit" value="Добавить заказ">
+            </form>
+            <form name="polyester">
+                <input id="polyester" type="text" autocomplete="off" placeholder="Потрачено полиэфира">
+                <input id="addPolyester" type="button" value="Добавить в расчеты">
+            </form>
+            <form name="polyurethane">
+                <input id="polyurethane" type="text" autocomplete="off" placeholder="Потрачено полиуретана">
+                <input id="addPolyurethane" type="button" value="Добавить в расчеты">
+            </form>
+            <form name="insulator">
+                <input id="insulator" type="text" autocomplete="off" placeholder="Потрачено изолятора">
+                <input id="addInsulator" type="button" value="Добавить в расчеты">
+            </form>
+        </div>
+
+        <div class="place">
+            <input id="setExpenses" type="button" value="Расчитать расход">
+        </div>
+
+        <div class="place">
+            <div id="message"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
