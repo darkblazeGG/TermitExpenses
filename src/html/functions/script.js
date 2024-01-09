@@ -18,6 +18,7 @@ function order() {
     orders.push(JSON.parse(document.getElementById('order').value))
     window.localStorage.setItem('orders', JSON.stringify(orders))
     document.getElementById('order').value = null
+    document.getElementById('orders').innerText = orders.join(', ')
 }
 
 function polyester() {
