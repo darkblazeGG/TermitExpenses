@@ -8,7 +8,7 @@ const logger = log4js.getLogger('default')
 
 const newOrder = require('./newOrder')
 
-const root = "\\\\Desktop-bl39msg\\заказы"
+const root = "D:\\ТЕРМИТ\\ЗАКАЗЫ"
 
 const Second = 1000
 const Minute = 60 * Second
